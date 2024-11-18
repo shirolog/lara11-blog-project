@@ -20,6 +20,11 @@ section {
   padding: 0 1rem;
 }
 
+.social_icon ul{
+  display: flex;
+  gap: 5px;
+}
+
 a {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;

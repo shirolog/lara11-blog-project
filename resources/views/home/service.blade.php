@@ -1,4 +1,6 @@
-<div class="services_section layout_padding">
+<div class="services_section layout_padding" style="width: 100%;
+    float: left;
+    padding-bottom: 90px;">
     <div class="container">
         <h1 class="services_taital">Blog Posts</h1>
         <p class="services_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration</p>

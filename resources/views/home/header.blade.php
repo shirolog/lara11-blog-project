@@ -27,7 +27,7 @@
         </nav>
     </div>
     <div class="container-fluid">
-        <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+        <div class="logo"><a href="index.html"><img src="images/logo.png" style="margin:auto;"></a></div>
         <div class="menu_main">
             <ul>
                 <li class="active"><a href="index.html">Home</a></li>
