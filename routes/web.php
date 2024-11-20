@@ -3,9 +3,21 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-Route::get('/', [HomeController::class, 'homepage'])
+Route::get('/', [HomeController::class, 'index'])
 ->name('home.homepage');
+
+Route::post('/logout', [HomeController::class, 'logout'])
+->name('logout');
+
+Route::get('/home', [HomeController::class, 'index'])
+->name('home.index');
+
+Route::get('/home/{post}', [HomeController::class, 'detail'])
+->name('home.detail');
+Route::get('/create_post', [HomeController::class, 'create_post'])
+->name('home.create_post');
 
 
 // Route::middleware([
@@ -18,8 +30,6 @@ Route::get('/', [HomeController::class, 'homepage'])
 //     })->name('dashboard');
 // });
 
-route::get('/home', [HomeController::class, 'index'])
-->name('home.index');
 
 
 Route::get('/post_page', [AdminController::class, 'index'])

@@ -1,23 +1,24 @@
 <div class="footer_section layout_padding">
     <div class="container">
         <div class="input_btn_main">
-            <input type="text" class="mail_text" style="border-radius: 20px;"  placeholder="Enter your email" name="Enter your email">
+            <input type="text" class="mail_text" style="border-radius: 20px; width: 100%; font-size: 18px; color: #2b2c2c; padding: 5px 20px;"
+             placeholder="Enter your email" name="Enter your email">
             <div class="subscribe_bt"><a href="#">Subscribe</a></div>
         </div>
 
         <div class="location_main">
-            <div class="call_text"><img style="margin: auto;" src="images/call-icon.png"></div>
+            <div class="call_text"><img style="margin: auto;" src="{{asset('images/call-icon.png')}}"></div>
             <div class="call_text"><a href="#">Call +01 1234567890</a></div>
-            <div class="call_text"><img style="margin: auto;" src="images/mail-icon.png"></div>
+            <div class="call_text"><img style="margin: auto;" src="{{asset('images/mail-icon.png')}}"></div>
             <div class="call_text"><a href="#">demo@gmail.com</a></div>
         </div>
 
         <div class="social_icon">
             <ul>
-                <li><a href="#"><img src="images/fb-icon.png"></a></li>
-                <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-                <li><a href="#"><img src="images/linkedin-icon.png"></a></li>
-                <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+                <li><a href="#"><img src="{{asset('images/fb-icon.png')}}"></a></li>
+                <li><a href="#"><img src="{{asset('images/twitter-icon.png')}}"></a></li>
+                <li><a href="#"><img src="{{asset('images/linkedin-icon.png')}}"></a></li>
+                <li><a href="#"><img src="{{asset('images/instagram-icon.png')}}"></a></li>
             </ul>
         </div>
     </div>

@@ -1,7 +1,5 @@
-<div class="services_section layout_padding" style="width: 100%;
-    float: left;
-    padding-bottom: 90px;">
-    <div class="container">
+<div class="services_section layout_padding">
+    <div class="container" style="max-width: 960px;">
         <h1 class="services_taital">Blog Posts</h1>
         <p class="services_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration</p>
         <div class="services_section_2">
@@ -13,7 +11,7 @@
                         <h4>{{$post->title}}</h4>
                         <p>Post by <b>{{$post->name}}</b></p>
     
-                        <div class="btn_main"><a href="#">Read More</a></div>
+                        <div class="btn_main"><a href="{{route('home.detail', $post->id)}}">Read More</a></div>
                     </div>
                     @endforeach
                 @endif
