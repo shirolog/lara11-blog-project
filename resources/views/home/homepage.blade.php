@@ -10,7 +10,6 @@
             <!-- banner section  -->
             @include('home.banner')
         </div>
-      
       <!-- services section -->
         @include('home.service')
       <!-- about section -->

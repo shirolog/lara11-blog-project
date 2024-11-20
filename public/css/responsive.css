@@ -292,6 +292,11 @@
         background-size: cover;
         padding: 0px;
     }
+
+    .div-deg{
+        padding-top: 400px;
+    }
+
     .navbar-toggler {
         background-color: #ffffff;
     }
@@ -540,6 +545,11 @@
         color: #ffffff;
         background: red;
     }
+
+    .div-deg{
+        padding-top: 400px;
+    }
+
     .banner_text {
         width: 100%;
     }
