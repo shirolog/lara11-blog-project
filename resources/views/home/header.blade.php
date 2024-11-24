@@ -12,16 +12,16 @@
                     <a class="nav-link" href="{{route('home.index')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="{{route('home.about')}}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
+                    <a class="nav-link" href="{{route('home.service')}}">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="blog.html">Blog</a>
+                    <a class="nav-link " href="{{route('home.blog')}}">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="contact.html">Contact</a>
+                    <a class="nav-link " href="{{route('home.contact')}}">Contact</a>
                 </li>
                 </ul>
             </div>
@@ -32,8 +32,8 @@
         <div class="menu_main">
             <ul>
                 <li class="active"><a href="{{route('home.index')}}">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="{{route('home.about')}}">About</a></li>
+                <li><a href="{{route('home.blog')}}">Blog</a></li>
                 @if (Route::has('login'))
                     @auth
 
@@ -44,6 +44,7 @@
                             </x-app-layout>
                         </li>
 
+                        <li><a href="{{route('home.my_post')}}">My Post</a></li>
                         <li><a href="{{route('home.create_post')}}">Create Post</a></li>
                     @else
                         <li><a href="{{route('login')}}">Login</a></li>

@@ -1015,3 +1015,17 @@ button {
 .copyright_text a:hover {
     color: #e27141;
 }
+
+
+.pagination nav{
+    width: 100%;
+    margin: 30px 0;
+    
+}
+
+.pagination nav div:nth-child(2){
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+}

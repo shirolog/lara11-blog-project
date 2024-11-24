@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style type="text/css">
+      .pagination{
+        margin: auto;
+      }
+
+      @media screen and (max-width:768px) {
+            
+            .pagination nav div:nth-child(1){
+                display: none;
+            }
+
+            .pagination nav div:nth-child(2){
+                margin: auto;
+            }
+        }
+    </style>
     @include('home.layout')
 </head>
 <body>

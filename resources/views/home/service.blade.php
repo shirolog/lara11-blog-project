@@ -6,7 +6,7 @@
             <div class="row">
                 @if($posts->isNOtEmpty())
                     @foreach($posts as $post)
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="padding: 20px; text-align:center;">
                         <div><img src="{{asset('postimage/'. $post->image)}}" class="services_img"></div>
                         <h4>{{$post->title}}</h4>
                         <p>Post by <b>{{$post->name}}</b></p>
@@ -14,6 +14,7 @@
                         <div class="btn_main"><a href="{{route('home.detail', $post->id)}}">Read More</a></div>
                     </div>
                     @endforeach
+                    <span class="pagination">{!!$posts->links()!!}</span>
                 @endif
 
             </div>

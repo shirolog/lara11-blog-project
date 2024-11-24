@@ -57,7 +57,8 @@ class AdminController extends Controller
 
     public function show(){
 
-        $posts = Post::all();
+        $posts = Post::latest()
+        ->paginate(5);
 
         return view('admin.show', compact('posts'));
     }
@@ -130,4 +131,31 @@ class AdminController extends Controller
         ]);
         
     }
+
+
+    public function form(){
+
+        return view('admin.form');
+    }
+
+    public function accept(Request $request, Post $post){
+
+        $post->post_status = 'active';
+        $post->save();
+        session()->flash('success', 'Post Status Changed to Active!');
+        
+        return redirect()->back();
+
+    }
+
+    public function reject(Request $request, Post $post){
+
+        $post->post_status = 'pending';
+        $post->save();
+        session()->flash('success', 'Post Status Changed to Pending!');
+
+        return redirect()->back();
+
+    }
+
 }

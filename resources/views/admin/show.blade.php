@@ -46,6 +46,38 @@
             padding: 20px;
           
         }
+
+        th:not(:last-child){
+            padding-right: 20px;
+        }
+        td:not(:last-child){
+            padding-right: 20px;
+        }
+
+        .pagination nav{
+            width: 100%;
+            margin: 30px 0;
+            
+        }
+
+        .pagination nav div:nth-child(2){
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            justify-content: center;
+        }
+
+
+        @media screen and (max-width:768px) {
+            
+            .pagination nav div:nth-child(1){
+                display: none;
+            }
+
+            .pagination nav div:nth-child(2){
+                margin: auto;
+            }
+        }
     </style>
   </head>
   <body>
@@ -63,7 +95,7 @@
         
         <h1 class="title_deg">All Post</h1>
 
-        <table class="table_deg">
+        <table class="table_deg mb-5">
             <tr class="th_deg">
                 <th>Post Title</th>
                 <th>Description</th>
@@ -73,6 +105,8 @@
                 <th>Image</th>
                 <th>Delete</th>
                 <th>Edit</th>
+                <th>Status Accept</th>
+                <th>Status Reject</th>
             </tr>
 
             @if($posts->isNotEmpty())
@@ -96,6 +130,9 @@
 
                         <td><a href="javascript:void(0);" class="btn btn-danger delete-btn" data-id="{{$post->id}}" role="button">Delete</a></td>
                         <td><a href="{{route('admin.edit', $post->id)}}" class="btn btn-success">Edit</a></td>
+                        <td><a href="{{route('admin.accept', $post->id)}}" class="btn btn-outline-secondary">Accept</a></td>
+                        <td><a href="{{route('admin.reject', $post->id)}}" class="btn  btn-primary" 
+                        onclick="return confirm('are you sure to reject this post?');">Reject</a></td>
                     </tr>
                 @endforeach
                 @else
@@ -105,7 +142,9 @@
                     </tr>
             @endif
         </table>
-
+        @if($posts->isNotEmpty())
+            <span class="pagination">{!!$posts->links()!!}</span>
+        @endif
         @include('admin.footer')
       </div>
     </div>
@@ -148,6 +187,10 @@
                 }
             });
         }
+
+
+
+
     </script>
 
   </body>

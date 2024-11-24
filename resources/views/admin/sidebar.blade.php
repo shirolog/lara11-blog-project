@@ -9,10 +9,10 @@
     </div>
     <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
     <ul class="list-unstyled">
-            <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
+            <li class="active"><a href="{{url('home')}}"> <i class="icon-home"></i>Home </a></li>
             <li><a href="{{route('admin.index')}}"> <i class="icon-grid"></i>Add Post </a></li>
             <li><a href="{{route('admin.show')}}"> <i class="fa fa-bar-chart"></i>Show Post </a></li>
-            <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
+            <li><a href="{{route('admin.form')}}"> <i class="icon-padnote"></i>Forms </a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
                 <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="#">Page</a></li>
@@ -20,7 +20,7 @@
                 <li><a href="#">Page</a></li>
                 </ul>
             </li>
-            <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
+                <li><a href="{{url('/login')}}"> <i class="icon-logout"></i>Login page </a></li>
     </ul><span class="heading">Extras</span>
     <ul class="list-unstyled">
         <li> <a href="#"> <i class="icon-settings"></i>Demo </a></li>

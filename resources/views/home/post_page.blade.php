@@ -34,6 +34,13 @@
             padding: 20px 0;
         }
 
+        
+        .field-deg img{
+            width: 250px;
+            height: 150px;
+            object-fit: contain;
+        }
+
         [type=file]{
             width: 200px;
         }
@@ -47,27 +54,37 @@
         <div class="header_section">
             @include('home.header')
 
-            <div class="div-deg">
-                <h3 class="title-deg">Add Post</h3>
-                <form action="{{route('home.user_post')}}" method="post" enctype="multipart/form-data">
+            <div class="div-deg" style="background: black;">
+                <h3 class="title-deg">Update Post</h3>
+                <form action="{{route('home.update_post_data', $post->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="field-deg">
                         <label for="title">Title</label> 
-                        <input type="text" name="title">
+                        <input type="text" name="title" value="{{old('title', $post->title)}}">
                     </div>
 
                     <div class="field-deg">
                         <label for="description">Description</label> 
-                        <textarea value="" name="description" id="description"></textarea>
+                        <textarea value="" name="description" id="description">{{old('description', $post->description)}}</textarea>
                     </div>
 
                     <div class="field-deg">
-                        <label for="image">Add Image</label> 
+                        <label for="">Current Image</label>
+                        @if(!empty($post->image)) 
+                            <img src="{{asset('postimage/'. $post->image)}}" alt="">
+                        @else
+                        <span style="font-size: 16px;">No image available</span>
+                        @endif
+                    </div>
+
+                    <div class="field-deg">
+                        <label for="image">Change Current Image</label> 
                         <input type="file" name="image" id="image">
                     </div>
 
                     <div class="field-deg">
-                        <input type="submit" class="btn btn-outline-secondary" value="Add Post">
+                        <input type="submit" class="btn outline-secondary" value="Update Post">
                     </div>
                 </form>
             </div>
@@ -84,7 +101,7 @@
     @if (session('success'))
         <script>
             swal({
-                title: "Congrats",
+                title: "Success",
                 text: "{{ session('success') }}",
                 icon: "success",
                 button: "OK",
