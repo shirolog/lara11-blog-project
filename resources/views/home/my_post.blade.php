@@ -46,6 +46,10 @@
         margin: auto;
       }
 
+      .pagination nav div:nth-child(2){
+        justify-content: center !important;
+      }
+
       @media screen and (max-width:768px) {
             
             .pagination nav div:nth-child(1){

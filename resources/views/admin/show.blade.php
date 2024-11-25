@@ -64,7 +64,7 @@
             display: flex;
             align-items: center;
             gap: 40px;
-            justify-content: center;
+            justify-content: center !important;
         }
 
 
@@ -123,7 +123,7 @@
                                 @if(!empty($post->image))
                                 <img class="img" src="{{asset('postimage/'. $post->image)}}" alt="">
                                 @else
-                                    <div class="empty">&nbsp;</div> 
+                                <img class="img" src="https://placehold.co/910x1400?text=No Image" alt=""> 
                                 @endif
                             </div>
                         </td>

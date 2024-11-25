@@ -47,24 +47,24 @@ Route::get('/service', [HomeController::class, 'service'])
 
 
 
-Route::get('/post_page', [AdminController::class, 'index'])
+Route::get('/post_page', [AdminController::class, 'index'])->middleware('auth')
 ->name('admin.index');
-Route::post('/post_page', [AdminController::class, 'store'])
+Route::post('/post_page', [AdminController::class, 'store'])->middleware('auth')
 ->name('admin.store');
-Route::get('/show_page', [AdminController::class, 'show'])
+Route::get('/show_page', [AdminController::class, 'show'])->middleware('auth')
 ->name('admin.show');
-Route::get('/edit_page/{post}', [AdminController::class, 'edit'])
+Route::get('/edit_page/{post}', [AdminController::class, 'edit'])->middleware('auth')
 ->name('admin.edit');
-Route::put('/edit_page/{post}', [AdminController::class, 'update'])
+Route::put('/edit_page/{post}', [AdminController::class, 'update'])->middleware('auth')
 ->name('admin.update');
-Route::delete('/show_page/{post}', [AdminController::class, 'destroy'])
+Route::delete('/show_page/{post}', [AdminController::class, 'destroy'])->middleware('auth')
 ->name('admin.destroy');
 Route::get('/show_accept/{post}', [AdminController::class, 'accept'])
 ->name('admin.accept');
-Route::get('/show_reject/{post}', [AdminController::class, 'reject'])
+Route::get('/show_reject/{post}', [AdminController::class, 'reject'])->middleware('auth')
 ->name('admin.reject');
 
-Route::get('/form_page/', [AdminController::class, 'form'])
+Route::get('/form_page/', [AdminController::class, 'form'])->middleware('auth')
 ->name('admin.form');
 
 

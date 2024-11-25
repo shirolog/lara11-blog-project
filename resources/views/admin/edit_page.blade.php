@@ -54,7 +54,11 @@
 
                 <div class="div_center">
                   <label for="">Old Image</label>
+                  @if($post->image)
                   <img src="{{asset('postimage/'. $post->image)}}" style="margin: auto;" height="100px" width="150px" alt="">
+                  @else
+                  <img src="https://placehold.co/910x1400?text=No Image" style="margin: auto;" height="100px" width="150px" alt="">
+                  @endif
                 </div>
 
                 <div class="div_center">

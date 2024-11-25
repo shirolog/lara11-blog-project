@@ -7,13 +7,19 @@
                 @if($posts->isNOtEmpty())
                     @foreach($posts as $post)
                     <div class="col-md-4" style="padding: 20px; text-align:center;">
+                        @if(($post->image))
                         <div><img src="{{asset('postimage/'. $post->image)}}" class="services_img"></div>
+                        @else
+                        <div><img src="https://placehold.co/910x1400?text=No Image" class="services_img"></div>
+                            
+                        @endif
                         <h4>{{$post->title}}</h4>
                         <p>Post by <b>{{$post->name}}</b></p>
     
                         <div class="btn_main"><a href="{{route('home.detail', $post->id)}}">Read More</a></div>
                     </div>
                     @endforeach
+
                     <span class="pagination">{!!$posts->links()!!}</span>
                 @endif
 
